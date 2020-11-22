@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+/*
+	css 는 여러 페이지의 공통된 부분을 한번에 변경하는 기능입니다.
+*/
+body {/*body 구문안에 공통 요소를 적어주세요.*/
+	color: blue; /*  글자색 :  */
+	background: green;
+}

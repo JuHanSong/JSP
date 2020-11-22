@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+	<h1>회원가입화면입니다.</h1>
+	<hr color = "blue">
+	<form action = "multi.jsp">
+	아이디 : <input type="text" name = "id"><br>
+	패스워드 : <input type="text" name = "pw"><br>
+	이름 : <input type="text" name = "name"><br>
+	연락처 : <select name="company">
+		<option value ="011">011
+		<option value ="012">012
+		<option value ="013">013
+		<option value ="014" selected="selected">014
+	</select>
+	<input type ="text" name = tel><br>
+	성별 : <input checked="checked" type = "radio" value = "man" name = "gender">남<!-- checked 는 미리 선택을 할 값을 입력. -->
+		 <input type = "radio" value = "wooman" name = "gender">여<br><!-- 라디오 버튼에는 name이 같아야 하나만 전송 -->
+	<input type = "checkbox" value = run name ="hobby"> 운동
+	<input type = "checkbox" value = book name ="hobby"> 독서
+	<input type = "checkbox" value = jump name ="hobby"> 등산
+	<br>
+	하고싶은말 :
+		<textarea rows="5" cols="20" name = "text"></textarea><br>
+		
+	<button type = "submit">입력값 전송.</button>
+
+	
+	</form>
+	</body>
+</html>
