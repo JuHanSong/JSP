@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#b1').click(function () {
+			//동기 통신(앞체이지동기가 되어서 뒷페이지를 호출하는 방식)
+			//페이지 단위로 호출되는 방식의 통신.
+			//<-> 아무때나 특정한 동기없이 서버를 호출하는 방식.(비동기 통신)
+			location.href = "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=%EC%9E%90%EB%8F%99%EC%B0%A8"
+		})
+		$('#b2').click(function () {
+			location.href = "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=0&ie=utf8&query=일요일"
+		})
+		
+	})
+</script>
+</head>
+<body>
+<button id = "b1">자동차 검색</button>
+<button id = "b2">일요일 검색</button>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#b1').click(function() {
+			alert('b1호출')
+			id = $('#id').val()//root
+			idCount = id.length
+			if (idCount > 4) {
+				//alert('유효한 아이디입니다.')
+				$('#d1').html('<font color = blue> 유효한 id 입니다.</font>')
+			} else {
+				//alert('id를 입력하지 않았거나 너무 적은 글자수 입니다.')
+				$('#d1').html('<font color = red> id를 입력하지 않았거나 너무 적은 글자수 입니다.</font>')
+			}
+			
+			$('#pw2').keyup(function() {
+				pw = $('#pw').val()
+				pw2 = $('#pw2').val()
+				
+			if (pw == pw2) {
+				$('#d2').html('<font color = blue> 패스워드 일치함</font>')
+			} else {
+				$('#d2').html('<font color = red> 패스워드 일치하지 않음.</font>')
+			}
+			})
+			
+		})
+		
+		$('#b2').click(function() {
+			alert('b2호출')
+			pw = $('#pw').val()
+			pw2 = $('#pw2').val()
+			
+			if (pw == pw2) {
+				alert('패스워드 일치함')
+			} else {
+				alert('패스워드 일치하지 않음')
+			}
+		})
+	})
+
+</script>
+</head>
+<body>
+아이디 : <input type = "text" id = "id">
+<button id ="b1">아이디 길이 체크</button><br>
+<hr color="red">
+<biv id = "d1">결과 넣는 곳 </biv><br>
+
+패스워드 : <input type="text" id ="pw"><br>
+패스워드 확인 : <input type="text" id ="pw2"><br>
+<button id = "b2"> 패스워드 체크</button><br>
+<hr color="red">
+<div id = "d2">결과 넣는곳</div>
+
+</body>
+</html>

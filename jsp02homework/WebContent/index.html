@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	
+	<body>	
+	<h1>회원가입 페이지입니다.</h1>
+	<hr color = "blue">
+	<form action = "serverconnetor.jsp">
+	<table border="1">
+	<tr><!-- tr : table row 한행, 가로줄 -->
+		<td class = "td1">아이디</td>
+		<td width="150"><input type = "text" name = "id"><br></td>
+	</tr>
+	<tr>
+		<td calss = "td1">패스워드</td>
+		<td width="150"><input type = "text" name = "pw"><br></td>
+	</tr>
+	<tr>
+		<td class = "td1">이름</td>
+		<td width="150"><input type = "text" name = "name"><br></td>
+	</tr>
+	<tr>
+		<td class="td1">성별</td>
+		<td width="150"><input checked="checked" type = "radio" value = "man" name = "gender">남
+						<input type = "radio" value="man" name = "gender">여<br>
+	</tr>
+	<tr>
+		<td class="td1">연락처</td>
+		<td width="150"><select name = "company">
+		<option value ="011">011
+		<option value = "012">012
+		<option value =  "013">013
+		<option value = "014" selected="selected">014
+		</select><input type ="text" name ="tel"></td>
+	</tr>
+	<tr>
+		<td class = "td1">취미</td>
+		<td width="150"><input type = "checkbox" value = run name = "hobby">운동
+		<input type = "checkbox" value = book name ="hobby">독서
+		<input type = "checkbox" value = book name = "hobby">등산</textarea><br></td>
+	</tr>
+	</table>
+			<button type ="submit">전송</button>
+	</form>
+	</body>
+</html>

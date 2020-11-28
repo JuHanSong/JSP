@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- jquery파일 연결하는 부분 -->
+<script type="text/javascript" src="jquery-3.5.1.js"></script>
+<!--프로그래머가 코드하는 부분  -->
+<script type="text/javascript">
+ $(function () {// $=> body를 먼저 읽고, 오른쪽에 있는 함수부분을 실행.
+		// click 이벤트가 발생하면 자동으로 함수가 호출 => 콜백함수!
+	
+	$("button").click(function() { // $('테그이름')
+		alert("더하기 기능을 처리함.")
+		n1 = $("#n1").val()
+		n11 = parseInt(n1)
+		n2 = $("#n2").val()
+		n22 = parseInt(n2)
+		alert(n11 + n22)
+	})	
+ })
+</script> <!-- jquery 사용시 script 하나 더 추가해야 사용이 가능함 -->
+	
+</head>
+<body>
+숫자1 : <input type="text" id = "n1">
+숫자2 : <input type="text" id = "n2">
+<button>더하기 처리</button>
+</body>
+</html>
