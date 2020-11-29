@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		//비동기 통신 : 특정한 동기가 없이 원할 때 아무때나 서버와 통신할 수 있음. 
+		//ajax(에이작스)
+		//화면이 넘어가지 않습니다.!
+		$('#b1').click(function() {
+			$.ajax({
+				url : "reply.jsp",
+				data : {
+					reply : $('#reply').val()
+				},
+				success : function(result) {
+					$('div').append('-<img src = img/car.jpg width=30 height=30>' + result + '<br>')
+				},
+				error : function() {
+					alert('ajax 연결 실패!!')
+				}
+			})
+		})
+	})
+</script>
+</head>
+<body>
+	댓글 : <input type="text" id = "reply">
+	<button id = "b1">댓글달기</button>
+	<hr color="blue">
+	<div></div>
+
+</body>
+</html>

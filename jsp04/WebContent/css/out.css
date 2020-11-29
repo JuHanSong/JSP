@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+h3{
+	background: red;
+	color: white;
+	font-weight: bold;
+}
+#id2{
+	background: green;
+	color: yellow;
+	border-color: red;
+	border: 20px 20px 20px 20px;
+}

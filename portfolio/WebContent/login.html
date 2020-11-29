@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="jquery-3.5.1.js"></script>
+		<script type="text/javascript">
+		/*아이디 숫자가 4글자 이상인지 확인하는 로직*/
+		$(function() {
+			$('#id').keyup(function() {
+				id = $('#id').val()
+				idCount = id.length
+				
+				if(idCount > 4){
+					if(idCount >4){
+						$('#div1').html('<font color = blue> 유효한 id입니다.</font>')						
+					}
+				}else{
+					$('#div1').html('<font color = red>글자수가 적습니다.</font>')
+				}
+			})	
+		})
+		/*패스워드 글자수 확인하는 로직*/
+		$(function() {
+			$('#pw').keyup(function() {
+				pw = $('#pw').val()
+				pwCount = pw.length
+				
+				if(pwCount > 4){
+						$('#div2').html('<font color = blue> 유효한 pw입니다.</font>')						
+				}else{
+					$('#div2').html('<font color = red>글자수가 적습니다.</font>')
+				}
+			})	
+		})
+		
+		
+		</script>
+		
+	</head>
+	<body>
+		<h3>로그인 페이지.</h3>
+		<hr color="red">
+		아이디 : <input type="text" id ="id">
+		<div id ="div1">아이디 카운트</div>
+		비밀번호 : <input type="text" id = "pw">
+		<div id ="div2">비밀번호 카운트</div>
+		<br><br>
+		<button id = "btnLogin">로그인</button>
+		<button id = "btnJoin" name = "btnJoin" onClick = "joinBtnClick()">회원가입</button>
+		<script type="text/javascript">
+			function joinBtnClick() {
+				location.href = "join.jsp"				
+			}
+		</script>
+		<hr color = "red">
+		
+	</body>
+</html>

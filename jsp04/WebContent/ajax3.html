@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(function() {// 콜백함수 body 부분을 먼저 읽고 와서
+		$('#b1').click(function() {
+			//id 입력값 가지고 오기.
+			$('div').empty()
+			$.ajax({
+				url : " https://api.rss2json.com/v1/api.json?rss_url=http%3A%2F%2Frss.hankooki.com%2Fdaily%2Fdh_economy.xml&api_key=ryk3xdrfsah1pivsfhp6pfjyztec37npcpc2cpos",
+				data : {
+					url : "http://rss.hankooki.com/daily/dh_economy.xml",
+					api_key : "ryk3xdrfsah1pivsfhp6pfjyztec37npcpc2cpos",
+					count : 20	
+				},		
+				success : function(result) {// result = dv.jsp의 실행결과가 들어간다.
+					//function(result)
+					//=>result변수에 db.jsp의 실행결과!
+					//alert(result)
+					list = result.items
+					alert('신문기사의 개수>>' + list.length)
+					$(list).each(function(index, news) {
+						title = news.title
+						link = news.link
+						//$('div').html(index +' : '+ news.title + '<br>')
+						$('div').append('<a href=' +link + '>' + title + '</a><br>')
+					})
+					// html : 1개만 업데이트
+					//append : 누적해서 업데이트 (댓글같은데 사용.)
+				},
+				error : function() {
+					alert('ajax 연결 실패!!')
+				}
+			})
+		})
+		
+	})
+</script>
+</head>
+<body>
+	<button id = b1>한국일보 기사 가지고 오기</button>
+	<br>
+
+	<hr color="blue">
+	<div>
+	</div>
+
+</body>
+</html>

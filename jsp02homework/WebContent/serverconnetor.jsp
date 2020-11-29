@@ -23,7 +23,7 @@
  	Connection con = DriverManager.getConnection(url, user, password);
  	out.print("2. DB서버와 연결에 성공 <br>");
  	
- 	String sql = "inset into member value(?,?,?,?,?,?)";
+ 	String sql = "insert into information values(?,?,?,?,?,?)";
  	PreparedStatement ps = con.prepareStatement(sql);
  	ps.setString(1, id);
  	ps.setString(2, pw);

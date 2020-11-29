@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		//비동기 통신 : 특정한 동기가 없이 원할 때 아무때나 서버와 통신할 수 있음. 
+		//ajax(에이작스)
+		//화면이 넘어가지 않습니다.!
+		$('#b1').click(function() {
+			//id 입력값 가지고 오기.
+			id2 = $('#id').val()
+			$.ajax({
+				url : "db.jsp",
+				data : {
+					id : $('#id').val()
+				},//SJON 
+				success : function(result) {// result = dv.jsp의 실행결과가 들어간다.
+					//function(result)
+					//=>result변수에 db.jsp의 실행결과!
+					//alert(result)
+					$('div').html('<font color = red>' + result + '</font>')
+					// html : 1개만 업데이트
+					//append : 누적해서 업데이트 (댓글같은데 사용.)
+				},
+				error : function() {
+					alert('ajax 연결 실패!!')
+				}
+			})
+		})
+
+		$('#b2').click(function() {
+
+			$.ajax({
+				url : "tel.jsp",
+				data : {
+					tel : $('#tel').val()
+				},
+				success : function(result) {// result = dv.jsp의 실행결과가 들어간다.
+					//function(result)
+					//=>result변수에 db.jsp의 실행결과!
+					//alert(result)
+					$('div').html('<font color = blue>' + result + '</font>')
+				},
+				error : function() {
+					alert('ajax 연결 실패!!')
+				}
+			})
+		})
+
+		$('#b3').click(function() {
+
+			$.ajax({
+				url : "money.jsp",
+				data : {
+					money : $('#money').val(),
+					choice : $('#choice').val()
+				},
+				success : function(result) {// result = dv.jsp의 실행결과가 들어간다.
+					//function(result)
+					//=>result변수에 db.jsp의 실행결과!
+					//alert(result)
+					$('div').html('<font color = blue>' + result + '</font>')
+				},
+				error : function() {
+					alert('ajax 연결 실패!!')
+				}
+			})
+		})
+
+	})
+</script>
+</head>
+<body>
+	가입하고자 하는 id입력
+	<input type="text" id="id">
+	<button id="b1">회원 id 중복체크</button>
+	<hr color="red">
+	본인 인증받을 전화번호 :
+	<input type="text" id="tel">
+	<button id="b2">인증번호 받기</button>
+	<hr color="red">
+	결제금액 :
+	<input type="text" id="money">
+	<br> 결제수단 : (1. 계좌이체 2. 신용카드 3. 휴대폰결제) :
+	<input type="text" id="choice">
+	<br>
+	<button id=b3>결제처리</button>
+
+	<br>
+	<hr color="blue">
+	<div></div>
+
+</body>
+</html>
